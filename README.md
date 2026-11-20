@@ -72,3 +72,17 @@ Older experiment files may be opened by selecting or renaming them with the
 - `EOSIM-help.html`: concise local help.
 - `EOBSIM.iss`: installer script.
 - `THIRD_PARTY_NOTICES.md`: source and rights information.
+
+## Browser interface preview
+
+A non-release browser mock-up is available in `preview/`. It includes tissue
+selection and a basic dilution calculator, but **does not run the Delphi
+simulation, record a trace, or save experiments**. Run it locally with:
+
+```sh
+python3 -m http.server 8000 --bind 127.0.0.1 --directory preview
+```
+
+Open `http://127.0.0.1:8000/`. Run its calculation tests with
+`node --test tests/preview-calculator.test.mjs`. This preview is not a PWA or a
+packaged desktop or mobile application.

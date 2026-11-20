@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'">
+  <title>EOSIM — Lab preview</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./main.mjs"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="./"><span class="brand-mark">e<span>o</span></span><span>EOSIM<small>THE VIRTUAL LAB</small></span></a>
+      <div class="nav-label">WORKSPACE</div>
+      <nav aria-label="Workspace"><a class="nav-active" href="#workspace"><span>◉</span> Experiment <b>01</b></a><a href="#calculator"><span>▦</span> Dilution calculator</a><a href="#about"><span>ⓘ</span> About this preview</a></nav>
+      <div class="sidebar-bottom"><div class="status-dot"></div><div><strong>Preview environment</strong><small>Interface in development</small></div></div>
+    </aside>
+    <main id="workspace">
+      <header class="topbar"><div class="breadcrumbs">WORKSPACE <span>/</span> <strong>EXPERIMENT</strong></div><div class="top-right"><span class="top-pill"><i></i> Local preview</span><span class="avatar">E</span></div></header>
+      <div class="content">
+        <div class="notice" role="status"><span>ⓘ</span><p><strong>Interface preview only.</strong> The Delphi simulation has not been ported to the browser. No experimental data is generated or saved.</p></div>
+        <div class="page-heading"><div><div class="eyebrow"><span></span> YOUR VIRTUAL LABORATORY</div><h1>Organ bath <em>experiment.</em></h1><p>Explore the workspace for your next pharmacology experiment.</p></div><span class="heading-badge">EDUCATIONAL SIMULATION <span>↗</span></span></div>
+        <div class="workspace-grid">
+          <section class="card setup" aria-labelledby="setup-title"><div class="card-header"><div><span class="section-number">01 / PREPARATION</span><h2 id="setup-title">Experiment setup</h2></div><span class="icon-box">⌁</span></div><p class="card-description">Select a tissue preparation to begin configuring your experiment.</p><label for="tissue">Tissue preparation <span>REQUIRED</span></label><div class="select-wrap"><select id="tissue"><option>Guinea Pig Ileum</option><option>Chick Biventer</option><option>Rabbit Arterial Ring</option><option>Rabbit Jejunum</option></select></div><div class="tissue-info"><div class="tissue-icon">✳</div><div><strong id="tissue-name">Guinea Pig Ileum</strong><small>Isolated tissue preparation</small></div><span>SELECTED</span></div><div class="divider"></div><div class="subhead"><strong>Bath conditions</strong><span>DEFAULT</span></div><div class="conditions"><div><small>RESERVOIR SOLUTION</small><strong>Krebs-Henseleit</strong></div><div><small>BATH VOLUME</small><strong>10 <span>mL</span></strong></div></div><div class="setup-foot"><span>◌</span> Simulation controls will be available after the model is ported.</div></section>
+          <section class="card recording" aria-labelledby="recording-title"><div class="card-header"><div><span class="section-number">02 / RECORDING</span><h2 id="recording-title">Tissue response</h2></div><span class="inactive"><i></i> NOT RECORDING</span></div><div class="chart-info"><div><strong>Force over time</strong><span>Contractile response · g</span></div><div class="chart-tools"><span>−</span><span>＋</span><span>⤢</span></div></div><div class="chart"><div class="axis-label">FORCE (g)</div><div class="chart-empty"><div class="wave-icon">〰</div><strong>Your trace will appear here</strong><span>The browser simulation is not available yet.</span></div><span class="axis-bottom">TIME (s)</span></div><div class="recording-bottom"><span><i></i> Waiting for simulation</span><button disabled>▶ &nbsp; Start recording</button></div></section>
+        </div>
+        <section class="card calculator" id="calculator"><div class="calc-intro"><span class="section-number">03 / QUICK TOOL</span><h2>Dilution calculator <span>↗</span></h2><p>Calculate the final concentration using C₁V₁ = C₂V₂. Use the same volume unit for both fields.</p></div><form id="dilution-form" class="calc-form"><label>Stock concentration <span>C₁</span><input id="stock" type="number" min="0" step="any" value="1" required><small>Any concentration unit</small></label><label>Volume added <span>V₁</span><input id="added" type="number" min="0" step="any" value="1" required><small>e.g. mL</small></label><label>Final volume <span>V₂</span><input id="total" type="number" min="0" step="any" value="10" required><small>Same volume unit</small></label><button type="submit">Calculate <span>→</span></button></form><div class="calc-result" aria-live="polite"><span>FINAL CONCENTRATION</span><strong id="result">0.1</strong><small id="result-note">In the same units as stock concentration</small></div></section>
+        <footer id="about"><span><strong>EOSIM</strong> · Electronic Organ Bath Simulation</span><span>Research & learning, reimagined. <b>✳</b></span></footer>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
