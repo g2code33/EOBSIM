@@ -1,14 +1,18 @@
-name: PR source checks (no application build)
+name: Source checks (no application build)
 
 on:
   pull_request:
+  push:
+    branches:
+      - main
+      - 'arena/**'
 
 permissions:
   contents: read
 
 concurrency:
-  group: source-checks-pr-${{ github.event.pull_request.number }}
-  cancel-in-progress: true
+  group: source-checks-${{ github.event_name == 'pull_request' && github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   source-checks:
@@ -24,7 +28,7 @@ jobs:
           python-version: '3.11'
       - name: Run source checks
         run: |
-          node --test tests/update-integrity.test.mjs
+          node --test tests/update-integrity.test.mjs tests/preview-calculator.test.mjs
           python -m unittest discover -s tests -v
       - name: Explain scope
         if: always()

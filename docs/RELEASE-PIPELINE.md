@@ -10,11 +10,11 @@ application port before the requested common web-asset pipeline is possible.
 
 | Job | Trigger | Output | Signing |
 | --- | --- | --- | --- |
-| PR source checks | pull request | test results only; no artifact | not applicable |
+| Source checks | pull request; push to main or arena branch | test results only; no artifact | not applicable |
 | Web, Windows, Linux, Android, iOS | none | none | not implemented |
 
-The PR checks run the standalone integrity helper's Node tests and existing
-Python source checks. They do not compile or smoke-test the app, and no release
+The source checks run the standalone integrity helper's Node tests, the browser
+preview calculator tests, and existing Python source checks. They do not compile or smoke-test the app, and no release
 or artifact names/sizes can be reported. They do not prove that the two update
 surfaces work.
 
