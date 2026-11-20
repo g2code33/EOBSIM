@@ -1,0 +1,45 @@
+# Delphi build outputs
+*.dcu
+*.dcp
+*.dpc
+*.bpl
+*.bpi
+*.jdbg
+*.jft
+*.map
+*.drc
+*.exe
+*.dll
+*.lib
+*.a
+*.d
+*.o
+*.obj
+*.res
+*.identcache
+*.local
+*.groupproj.local
+*.bdsgroup
+*.bdsproj
+*.dproj.local
+*.groupproj
+__history
+*.tmp
+*.~*~
+*.zip
+
+Win32/
+Win64/
+
+# Installer output
+Output/
+*.msi
+*.msm
+
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# Python test cache
+__pycache__/
+*.pyc
